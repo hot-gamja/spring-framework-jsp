@@ -36,7 +36,7 @@ public class UserController {
      * Show user detail
      */
     @GetMapping("/{id}")
-    public String viewUser(@PathVariable Long id, Model model) {
+    public String viewUser(@PathVariable("id") Long id, Model model) {
         User user = userService.getUserById(id);
         if (user == null) {
             return "redirect:/users";
@@ -74,7 +74,7 @@ public class UserController {
      * Show edit user form
      */
     @GetMapping("/{id}/edit")
-    public String showEditForm(@PathVariable Long id, Model model) {
+    public String showEditForm(@PathVariable("id") Long id, Model model) {
         User user = userService.getUserById(id);
         if (user == null) {
             return "redirect:/users";
@@ -87,7 +87,7 @@ public class UserController {
      * Update user
      */
     @PostMapping("/{id}")
-    public String updateUser(@PathVariable Long id, @ModelAttribute User user,
+    public String updateUser(@PathVariable("id") Long id, @ModelAttribute User user,
                            RedirectAttributes redirectAttributes) {
         try {
             user.setId(id);
@@ -105,7 +105,7 @@ public class UserController {
      * Delete user
      */
     @PostMapping("/{id}/delete")
-    public String deleteUser(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+    public String deleteUser(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         try {
             userService.deleteUser(id);
             redirectAttributes.addFlashAttribute("message", "User deleted successfully!");

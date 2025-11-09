@@ -11,6 +11,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 }
 
+// Enable parameter names in compiled code for Spring annotations
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-parameters'
+}
+
 repositories {
     mavenCentral()
 }
