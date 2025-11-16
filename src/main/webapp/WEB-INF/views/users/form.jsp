@@ -79,7 +79,7 @@
             background-color: #5a6268;
         }
         .form-actions {
-            margin-top: 30px;
+            margin-top: 0px;
             padding-top: 20px;
             border-top: 2px solid #e0e0e0;
         }
@@ -104,6 +104,11 @@
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" name="fullName" value="${user.fullName}">
             </div>
+
+            <%-- <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="${user.phoneNumber}">
+            </div> --%>
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">${user.id == null ? 'Create' : 'Update'}</button>
