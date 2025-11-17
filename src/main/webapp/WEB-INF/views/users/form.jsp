@@ -105,10 +105,11 @@
                 <input type="text" id="fullName" name="fullName" value="${user.fullName}">
             </div>
 
-            <%-- <div class="form-group">
-                <label for="fullName">Full Name</label>
+            <%-- 추가: 전화번호 입력 필드 --%>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
                 <input type="text" id="phoneNumber" name="phoneNumber" value="${user.phoneNumber}">
-            </div> --%>
+            </div>
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">${user.id == null ? 'Create' : 'Update'}</button>

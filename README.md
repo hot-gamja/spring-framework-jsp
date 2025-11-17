@@ -22,16 +22,19 @@ A Spring Framework 6.x web application using JSP, MyBatis, and PostgreSQL.
 ### Development Mode (with Hot Reloading)
 
 1. Start the exploded WAR builder in continuous mode (Terminal 1):
+
 ```bash
 ./gradlew explodeWar --continuous
 ```
 
 2. Start Docker containers (Terminal 2):
+
 ```bash
 docker-compose up -d
 ```
 
 3. Access the application:
+
 ```
 http://localhost:8080
 ```
@@ -39,6 +42,7 @@ http://localhost:8080
 ### Production Build
 
 Build and deploy the WAR file:
+
 ```bash
 ./gradlew buildAndDeploy
 docker-compose up -d

@@ -88,7 +88,7 @@ public class UserController {
      */
     @PostMapping("/{id}")
     public String updateUser(@PathVariable("id") Long id, @ModelAttribute User user,
-                           RedirectAttributes redirectAttributes) {
+            RedirectAttributes redirectAttributes) {
         try {
             user.setId(id);
             userService.updateUser(user);

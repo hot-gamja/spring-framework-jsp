@@ -10,6 +10,7 @@ public class User {
     private String username;
     private String email;
     private String fullName;
+    private String phoneNumber; // 추가: 전화번호 필드
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -18,10 +19,11 @@ public class User {
     }
 
     // Constructor with parameters
-    public User(String username, String email, String fullName) {
+    public User(String username, String email, String fullName, String phoneNumber) { // 추가: phoneNumber 파라미터
         this.username = username;
         this.email = email;
         this.fullName = fullName;
+        this.phoneNumber = phoneNumber; // 추가
     }
 
     // Getters and Setters
@@ -57,6 +59,16 @@ public class User {
         this.fullName = fullName;
     }
 
+    // 추가: phoneNumber getter
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    // 추가: phoneNumber setter
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -80,6 +92,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", fullName='" + fullName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' + // 추가
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

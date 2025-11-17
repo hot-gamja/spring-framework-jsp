@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
     username VARCHAR(100) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
     full_name VARCHAR(200),
+    phone_number VARCHAR(20), -- 추가: 전화번호 컬럼
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -12,10 +13,10 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
 
 -- Insert sample data
-INSERT INTO users (username, email, full_name) VALUES
-    ('john_doe', 'john@example.com', 'John Doe'),
-    ('jane_smith', 'jane@example.com', 'Jane Smith'),
-    ('bob_wilson', 'bob@example.com', 'Bob Wilson')
+INSERT INTO users (username, email, full_name, phone_number) VALUES -- 추가: phone_number 컬럼 포함
+    ('john_doe', 'john@example.com', 'John Doe', '010-1234-5678'), -- 추가: 샘플 전화번호
+    ('jane_smith', 'jane@example.com', 'Jane Smith', '010-2345-6789'), -- 추가: 샘플 전화번호
+    ('bob_wilson', 'bob@example.com', 'Bob Wilson', '010-3456-7890') -- 추가: 샘플 전화번호
 ON CONFLICT (username) DO NOTHING;
 
 -- Create function to update updated_at timestamp
